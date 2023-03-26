@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stock portfolio
+{% endblock %}
+
+{% block main %}
+        <div class="mb-3">
+            <h2>Stock portfolio</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Stock symbol</th>
+                            <th>Number of shares</th>
+                            <th>Current price</th>
+                            <th>Total value of holding</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- TODO: Lookup the stocks information and display it in a table! -->
+                        {% for dict in list1 %}
+                            <tr>
+                                <td>{{ dict["symbol"] }} </td>
+                                <td>{{ dict["number"] }} </td>
+                                <td>{{ dict["price"] | usd }}</td>
+                                <td>{{ dict["total_value"] | usd }}</td>
+                                </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <p>Cash balance: {{ balance | usd }}</p>
+                <p>Grand total: {{ gr_total | usd }}</p>
+        </div>
+{% endblock %}

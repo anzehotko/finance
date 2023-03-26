@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+        <div class="mb-3">
+            <h2>History of your purchasing and selling</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Action (buy/sell)</th>
+                            <th>Symbol</th>
+                            <th>Price at transaction</th>
+                            <th>Number of stocks bought/sold</th>
+                            <th>Timestamp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- TODO: Lookup the stock history and display it in a table! -->
+                        {% for dict in tableh %}
+                        <tr>
+                            <td> {{ dict["action"] }}</td>
+                            <td> {{ dict["symbol"] }}</td>
+                            <td> {{ dict["price"] | usd }}</td>
+                            <td> {{ dict["number"] }}</td>
+                            <td> {{ dict["timestamp"] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+        </div>
+{% endblock %}

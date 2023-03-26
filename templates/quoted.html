@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stock information
+{% endblock %}
+
+{% block main %}
+        <div class="mb-3">
+            <h2>Stock information</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- TODO: Lookup the stock information and display it in a table! -->
+                        <tr>
+                            <td> {{ stockinf["name"] }}</td>
+                            <td> {{ stockinf["price"] | usd }}</td>
+                            </tr>
+                    </tbody>
+                </table>
+        </div>
+{% endblock %}
